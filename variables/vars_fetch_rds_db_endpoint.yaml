@@ -2,6 +2,7 @@
 # Playbook Configuration
 play_name   : "Wordpress Web Application Database Automation"
 hosts       : "localhost"
+become_root : yes
 gather_facts: "False"
 connection  : "local"
 
