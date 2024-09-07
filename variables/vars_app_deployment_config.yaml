@@ -1,0 +1,13 @@
+# Define variables for the Application/Webserver instance Configuration
+# Playbook Configuration
+play_name   : Execute Shell Script from GitHub Repository
+target_host : all
+become_root : yes
+
+# Assign Execution Permission and Execute Script
+assign_execute_permission: chmod +x /home/ansibletower/ansible-tower-project/startup-script/app-automation.sh
+execute_automation_script: /home/ansibletower/ansible-tower-project/startup-script/app-automation.sh
+
+# Upgrade PHP Version 7 to 8
+upgrade_php_assign_execute_permission: chmod +x /home/ansibletower/ansible-tower-project/startup-script/app-upgrade.sh 
+upgrade_php_execute_automation_script: /home/ansibletower/ansible-tower-project/startup-script/app-upgrade.sh 
