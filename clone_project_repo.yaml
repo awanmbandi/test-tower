@@ -4,8 +4,6 @@
   become: "{{ become_root }}" # Run commands with elevated privileges (e.g., sudo)
   vars_files:
     - variables/vars_clone_project_repo.yaml
-  vars:
-    ansible_ssh_common_args: '-o ControlMaster=no -o ConnectTimeout=30'  # Disable SSH multiplexing for this play
 
   tasks:
     - name: Clone the GitHub project repository (specific branch)
@@ -15,3 +13,4 @@
         version   : "{{ project_repo_branch }}"    # Specify the branch you want to checkout
         # clone     : "{{ clone_project_repo }}"    
         # update    : "{{ update_project_repo }}"
+      ignore_errors: yes
